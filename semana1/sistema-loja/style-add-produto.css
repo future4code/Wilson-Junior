@@ -1,0 +1,51 @@
+/* Box-sizing os elementos*/
+body {
+    margin: 0;
+  }
+  
+  *{
+    box-sizing: border-box;
+  } 
+  
+  input, textarea {
+    width: 100%;
+  }
+
+/* Organização do Site em grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #cbddf0;
+  text-align: center;
+  
+}
+/* Style - Header */
+.header {
+  background-color: rgba(45, 148, 189, 0.8);
+  border: none solid rgba(0, 0, 0, 0.8);
+  padding: 2px;
+  font-size: 14px;
+  text-align: center;
+}
+/* Grid dos links */
+.grid-item1 {
+    grid-template-columns: 100%;
+    padding: auto;
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+  }
+
+/* Style - Foot */
+    .Footer {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        padding: auto;
+        font-size: 15px;
+        text-align: center;
+    }
+/* Tamanho de imagens das redes sociais */
+    #img{
+        block-size: 50px;
+  
+    }
