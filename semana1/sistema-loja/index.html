@@ -5,40 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CARTOON DELÍCIAS</title>
+    <link rel="stylesheet" type="text/css" href="style-index.css"/>
 </head>
 <body>
-    <div>
+    <!-- Cabeçalho -->
+    <div class="header">
+           
         <h1>Bem-vind@ à <em>CARTOON DELÍCIAS</em>!</h1>
         <p>Seus personagens favoritos cuidam de suas compras</p>
-    </div>
 
-    <div>
-        <a href="./index.html">Página Inicial</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque</a>
-        <a href="./add-produto.html">Adicionar Produto</a>
-        <a href="./funcionarios.html">Funcionários</a>
-    </div>
+     </div>
 
-    <div>
-        <!-- ADICIONAR INFORMAÇOES SOBRE SUA LOJINHA -->
-     <h2>Diversão e Guloseimas</h2>
-            <p> Venha conhecer nossas delícias, temos doces para todos os gostos e projetos de vida.</p> 
-            <p>Temos de jujubas até bolo fit.</p><br>
-            <h3> Atendimento realizado pelas Meninas super poderosas</h3> 
-            <img src="./img/as-meninas-superpoderosas.gif" alt="as-meninas-superpoderosas" style="width:228px; height:128px;"/>
-            <h4> Gerenciados pelo Capitão Gancho e pelo Macaco-Louco</h4> 
-            <img src="./img/capitao-gancho.jpg" alt="as-meninas-superpoderosas" style="width:70px; height:90px;"/>
-            <img src="./img/Macaco_louco.png" alt="as-meninas-superpoderosas" style="width:70px; height:98px;"/>   
-    </div>
-<br>
-    <div>
-        <p><span style="border: 2px solid black">Sigan-nos em nossas redes sociais! </span></p>
-
-        <div>
-            <img src="https://image.flaticon.com/icons/png/512/25/25305.png" style="width:50px; height:50px;" />
-            <img src="https://image.flaticon.com/icons/png/512/25/25425.png" style="width:70px; height:70px;" />
-            <img src="https://image.flaticon.com/icons/png/512/8/8800.png" style="width:100px; height:100px;" />
+    <!-- Links -->
+    <div class="grid-container">
+        <div class="grid-item1">
+            <blockquote class="grid-item1"><a href="./index.html">Página Inicial</a></blockquote>
+            <blockquote class="grid-item1"><a href="./ctrl-estoque.html">Controle de Estoque</a></blockquote>
+            <blockquote class="grid-item1"><a href="./add-produto.html">Adicionar Produto</a></blockquote>
+            <blockquote class="grid-item1"><a href="./funcionarios.html">Funcionários</a></blockquote>
         </div>
     </div>
+
+        <div class="grid-item" id="colunas">
+         <h2>Diversão e Guloseimas</h2>
+          
+                <p> Venha conhecer nossas delícias, temos doces para todos os gostos e projetos de vida.</p> 
+                <p>Temos de jujubas até bolo fit.</p><br>
+            
+             <h3> Atendimento realizado pelas Meninas super poderosas</h3> 
+                <img src="./img/as-meninas-superpoderosas.gif" alt="as-meninas-superpoderosas" style="width:228px; height:128px;"/>
+                <h4> Gerenciados pelo Capitão Gancho e pelo Macaco-Louco</h4> 
+                <img src="./img/capitao-gancho.jpg" alt="as-meninas-superpoderosas" style="width:70px; height:90px;"/>
+                <img src="./img/Macaco_louco.png" alt="as-meninas-superpoderosas" style="width:70px; height:98px;"/>   
+        
+            </div>    
+        </div> 
+    </div>
+        <div class="Footer">
+        
+            <span></span>Sigan-nos em nossas redes sociais!</span>
+            <p>
+             <img src="https://image.flaticon.com/icons/png/512/25/25305.png" id="img"/>
+             <img src="https://image.flaticon.com/icons/png/512/25/25425.png" id="img"/>
+             <img src="https://image.flaticon.com/icons/png/512/8/8800.png" id="img"/>
+            </p>
+        </div>
 </body>
 </html>
