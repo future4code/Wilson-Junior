@@ -5,12 +5,12 @@ body {
     padding: 0;
     margin: 0;
     font-size: 10px;
-    color: #dddddd;
+    color: white;
 }
 
 #main-container{
     display:grid;
-    grid-template-rows: 5% 50% 20% 20% 5%;
+    grid-template-rows: 5% 70% 20% 5%;
     grid-template-columns: 25% 25% 25% 25%;  
 }
 
@@ -26,6 +26,8 @@ body {
     grid-column-start: 1;
     grid-column-end:2;
     grid-row-start: 1;
+    align-items: center;
+    text-align: center;
 }
 
 .yellow-background {
@@ -34,6 +36,8 @@ body {
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 1;
+    align-items: center;
+    text-align: center;
 }
 
 .pink-background {
@@ -43,6 +47,8 @@ body {
     grid-row-end:3;
     grid-column-start: 1;
     grid-column-end:5;
+    align-items: center;
+    text-align: center;
 
 }
 
@@ -54,6 +60,7 @@ body {
     grid-row-end:4;
     grid-column-start: 1;
     grid-column-end:5;
+    
 
 }
 
@@ -67,35 +74,36 @@ body {
 
 .blue-background {
     background-color: blue;
-          
+    align-content: center;
+    text-align: center;      
 }
 
 #vertical-middle-container{
     display: grid;
-    grid-template-rows: 50% 50%;
-}
-
-
-#img {
-    display: grid;
     grid-row-start: 1;
-    grid-row-end:2;
-    
+    grid-row-end: 3;
+    grid-column-start:4;
 }
 
-#extar {
 
-    
+#image {
+    display: grid;
+    text-align: center;
+}
+
+#extra {
+    display: grid;
+    text-align: center;
 }
 
 
 .red-background {
-    display:grid;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: 50% 50%;
     background-color: red;
+    display:grid;
     grid-row-start: 1;
     grid-row-end:2;
+    align-items: center;
+    text-align: center;
     
     
 }
@@ -103,11 +111,23 @@ body {
 .lightgreen-background {
     background-color: lightgreen;
     display:grid;
-    grid-row-start: 4;
+    grid-row-start: 1;
+    grid-row-end:2;
+    align-items: center;
+    text-align: center;
+}
+
+#FOOTER {
+    display: grid;
+    grid-row-end: 5;
+    grid-column: 1/5;
+
 }
 
 .purple-background {
     background-color: purple;
     display:grid;
-    grid-row-start: 5;
+    align-items: center;
+    text-align: center;
+
 }
