@@ -1,0 +1,181 @@
+/* Galeria para foto e novas imagens */
+ * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif, Helvetica, sans-serif;
+    
+  }
+
+/* Side navigation */
+  .sidenav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #214252;
+    overflow-x: hidden;
+  }
+  
+    
+/* Side navigation links */
+  .sidenav a {
+    color: white;
+    margin: auto;
+    padding: 30px;
+    text-decoration: none;
+    text-align: center;
+    display: grid;
+    block-size: 20%;
+  }
+
+/* Hover Links */
+  .sidenav a:hover {
+    background-color: #0e918c;
+    color: black;
+  }
+  
+/* Cabeçalho */
+    .header {
+    background-color: #0e918c;
+    border-bottom: 5px solid azure;
+    margin: auto;
+    display: block;
+    block-size: auto;
+    text-align: center;
+    }
+
+    
+/* Style conteúdo */
+  .content {
+    margin-left: 151px;
+    border: 12px solid azure;
+    display:block;
+    flex: 3;
+    background-color: #f6f5f5 ; 
+  }
+  
+   .grid-item {
+    background-color: #d2f5e3;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding:60px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+/* Conteúdo organizado */
+
+  div.gallery {
+    border: 4px solid #ccc;
+   display: inline-block;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #f05454;
+    background-color: #ce6262;
+  }
+   
+  div.gallery > article {
+        width: 100%;
+        height: 100%;
+    
+    }
+
+/* Conteúdo HomePage */
+.all-subject {
+    margin: 0;
+    padding: 5px;
+    background-color: #0e918c;
+  }
+  
+  .all-subject > h1, .subject {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .subject {
+    background: white;
+  }
+  
+  .subject > h2, p {
+    margin: 2px;
+    font-size: 90%;
+  }
+
+/* Galeria */
+
+.img {
+  width: 80px
+
+  
+}
+ li :hover{
+  background-color: #0e918c;
+  color: black;
+
+}
+
+/* Formulário */
+
+form {
+  /* Centraliza o form na página */
+  margin: 0 auto;
+  width: 400px;
+
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+/* Alinhamento - label */
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+input, textarea {
+  /* Configurações de fonte e tamanho de texto*/
+  font: 1em sans-serif;
+  width: 300px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /* Bordas do formulário*/
+  border: 1px solid #999;
+}
+
+/* Rodapé */
+  .Footer {
+    background-color: #0e918c;
+    margin: auto;
+    display: grid;
+    position: fixed;
+    bottom: center;
+    width:100%;
+
+    }
+
+    .Footer > p {
+    display: block;
+    text-align: center;
+    }
+
+    .img-Footer {
+    width: 30%;
+    float: right;
+    text-align: center;
+    margin: none;
+    }
+
+    .img-Footer > img {
+    height: 40px;
+    margin: 5px;
+    }
