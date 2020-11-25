@@ -1,0 +1,133 @@
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+}
+
+#main-container{
+    display:grid;
+    grid-template-rows: 5% 70% 20% 5%;
+    grid-template-columns: 25% 25% 25% 25%;  
+}
+
+#top-container{
+    display: grid;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end:5;
+}
+.green-background {
+    background-color: green;
+    display:grid;
+    grid-column-start: 1;
+    grid-column-end:2;
+    grid-row-start: 1;
+    align-items: center;
+    text-align: center;
+}
+
+.yellow-background {
+    background-color: yellow;
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    align-items: center;
+    text-align: center;
+}
+
+.pink-background {
+    background-color: fuchsia;
+    display:grid;
+    grid-row-start: 2;
+    grid-row-end:3;
+    grid-column-start: 1;
+    grid-column-end:5;
+    align-items: center;
+    text-align: center;
+
+}
+
+#middle-container {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 25% 25% 25% 25%;  
+    grid-row-start: 3;
+    grid-row-end:4;
+    grid-column-start: 1;
+    grid-column-end:5;
+    
+
+}
+
+#content2 {
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start:1;
+    grid-column-end: 3;
+}
+
+.blue-background {
+    background-color: blue;
+    align-content: center;
+    text-align: center;      
+}
+
+#vertical-middle-container{
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start:4;
+}
+
+
+#image {
+    display: grid;
+    text-align: center;
+}
+
+#extra {
+    display: grid;
+    text-align: center;
+}
+
+
+.red-background {
+    background-color: red;
+    display:grid;
+    grid-row-start: 1;
+    grid-row-end:2;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+.lightgreen-background {
+    background-color: lightgreen;
+    display:grid;
+    grid-row-start: 1;
+    grid-row-end:2;
+    align-items: center;
+    text-align: center;
+}
+
+#FOOTER {
+    display: grid;
+    grid-row-end: 5;
+    grid-column: 1/5;
+
+}
+
+.purple-background {
+    background-color: purple;
+    display:grid;
+    align-items: center;
+    text-align: center;
+
+}
