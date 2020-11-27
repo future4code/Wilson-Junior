@@ -1,0 +1,138 @@
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main-container{
+    background-color:white;
+    display:grid;
+    grid-template-rows: 15% 30% 30% 15%;
+    grid-template-columns: 22% 25% 25% 22%;
+    width: 100%;
+    height: 100%;
+    gap:3%;  
+}
+/* Cabeçalho */
+.header {
+    display: grid;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #393e46;
+    grid-row: 1;
+    grid-column: 1/5;
+    width: 100vw;
+    height: auto;
+}
+
+#divBusca{
+    display: grid;
+    justify-self: stretch;
+    align-self: center;
+    grid-column: 6;
+    background-color:#eeeeee;
+    border:solid 1px;
+    border-radius:10px;
+    width:90%;
+    height: 30%;
+  }
+  
+  #txtBusca{
+    grid-row: 1;
+    grid-column: 5;
+    justify-self: center;
+    background-color:transparent;
+    font-style:italic;
+    font-size:15px;
+    border:none;
+    width:100%;
+    height: 100%;
+  }
+  
+
+/* Galeria de vídeos */
+
+.container-videos{
+    color: #393e46;
+    grid-row: 2/4;
+    grid-column: 1/5;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    width: 100vw;
+    
+}
+
+video {
+    width: 20vw; 
+    height: 20vh;
+
+}
+
+div.gallery {
+
+    background-color:;
+    margin: 5px;
+    width: 98%;
+    height: auto;
+    flex-wrap: wrap;
+    
+}
+  
+  div.gallery:hover {
+        border: 1px solid #777;
+        background-color: #eeeeee;
+    }
+  
+  div.gallery img {
+        width: 20vw;
+        height: auto;
+        
+    }
+  
+  div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+  .responsive {
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        padding: 0 6px;
+        max-width: 100%;
+        height: auto;
+
+    }
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #393e46;
+    grid-row: 4;
+    grid-column: 1/5;
+    width: 100vw;
+    height: auto;
+}
+/* Responsividade */
+
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+}
