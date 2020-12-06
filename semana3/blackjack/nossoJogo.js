@@ -1,47 +1,59 @@
-/**
- * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
- * 
- * 
-    const carta = comprarCarta(); // Sorteia uma carta. Por exemplo, o rei de ouros
-    
-    console.log(carta.texto) // imprime o texto da carta. Exemplo: "K♦️" (indica "K" de ouros)
-    console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
- * 
- * 
- * 
- */
+
 
 // Greeting Message
 
-const Oi = alert('Bem vindo ao jogo de Blackjack!')
+const Oi = console.log('Bem vindo ao jogo Blackjack!')
+
+// Início do jogo
 
 if(confirm("Quer iniciar uma nova rodada?")) {
 
-   const carta = comprarCarta(); 
+// Definição das cartas
    
-   const Usuario = []
+   const card1 = comprarCarta()
    
-
-   console.log('essa é a mão do usuário', )
-
-   comprarCarta();
-   const Computador = [];
+   const card2 = comprarCarta() 
    
-   console.log('essa é a mão do computador', )
+   const card3 = comprarCarta()
+   
+   const card4 = comprarCarta()
 
+// Distirbuição das cartas para cada mão e cálculo de valor
 
-// console.log(carta.texto) 
+   let userHand =[card1.texto, card2.texto, card1.valor, card2.valor]
+   let totalUserhand = Number(card1.valor+card2.valor)
+   let pcHand = [card3.texto, card4.texto, card3.valor, card4.valor]
+   let totalPChand = Number(card3.valor+card4.valor)
 
-// console.log(carta.valor)
-  
+// Mensagens no console
+
+   console.log('Usuário - cartas:', userHand[0], userHand[1], '- pontuação', totalUserhand)
+
+ 
+   console.log('Computador - cartas:', pcHand[0],pcHand[1], '- pontuação', totalPChand)
+
+// Condições para empate, vencedor ou perdedor
+
+   if  (totalUserhand === totalPChand){
+
+      console.log ('Tivemos um empate!')
+   }
+
+   else if (totalUserhand > totalPChand){
+
+      console.log ('O Usuário venceu!')
+   }
+
+   else if (totalUserhand < totalPChand){
+
+      console.log ('O Computador venceu!')
+   }
+ 
 }   
+
+// Caso o usuário não queira mais jogar
 
 else {
 	let bye = console.log('O jogoacabou =(')
 }
-
-
-
-
-
 
