@@ -120,14 +120,93 @@
 
 // c) 
 
-// function escreveDezvezes (texto){
+// function escreveDezvezes(texto){
 
 //    texto = [prompt("Escreva alguma coisa!")]
 
-//    for(let i=0; i < 11; i++)
+//    for(i=0; i < 11; i++){
 
 //    console.log(texto)
    
 // }
 
 // escreveDezvezes()
+
+
+// EXERCÍCIO 6
+
+// a)
+// function escreveArray(X){
+//     for(item of X){
+//         console.log(item)
+//     }
+//     return X.length
+    
+// }
+
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+// const tamanhoArray = escreveArray(array)
+// console.log("Tamanho: ", tamanhoArray)
+
+// // b)
+
+// function verificaPar (num1) {
+  
+//     if (num1 % 2 === 0) {
+//         var n = (true)
+//         console.log('É um numero par')
+//         }
+    
+//     else {
+//             console.log('Não é par!')
+//         }
+
+//     return n
+// }
+ 
+// c)
+
+// function verificaPar (array) {
+
+//     let arrayNumPar = [];
+  
+//     for (let i of array) {
+//         if (i % 2 === 0) {
+//         arrayNumPar.push(i)
+//         }
+//     }
+  
+//     return arrayNumPar;
+//   }
+//   const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+// d)
+
+function verifica (num1) {
+  
+    if (num1 % 2 === 0) {
+        var n = (true)
+        console.log('É um numero par')
+        }
+    
+    else {
+            console.log('Não é par!')
+        }
+
+    return n
+}
+
+function verificaPar (array) {
+
+    let arrayNumPar = [];
+  
+    for (let i of array) {
+        if (i % 2 === 0) {
+        arrayNumPar.push(i)
+        }
+    }
+  
+    return arrayNumPar;
+  }
+  const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
