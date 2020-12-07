@@ -182,31 +182,34 @@
 
 // d)
 
-function verifica (num1) {
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+// function verifica (num1) {
   
-    if (num1 % 2 === 0) {
-        var n = (true)
-        console.log('É um numero par')
-        }
+//     if (num1 % 2 === 0) {
+//         var n = (true)
+//         console.log('É um numero par')
+//         }
     
-    else {
-            console.log('Não é par!')
-        }
+//     else {
+//             console.log('Não é par!')
+//         }
 
-    return n
-}
+//     return n
+// }
 
-function verificaPar (array) {
+// function verificaPar (array) {
 
-    let arrayNumPar = [];
+//     let arrayNumPar = [];
   
-    for (let i of array) {
-        if (i % 2 === 0) {
-        arrayNumPar.push(i)
-        }
-    }
+//     for (let i of array) {
+//         console.log(i)
+//         if (verifica (i)) {
+        
+//         arrayNumPar.push(i)
+//         }
+//     }
   
-    return arrayNumPar;
-  }
-  const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+//     return arrayNumPar;
+//   }
 

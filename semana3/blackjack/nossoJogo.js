@@ -10,27 +10,19 @@ if(confirm("Quer iniciar uma nova rodada?")) {
 
 // Definição das cartas
    
-   const card1 = comprarCarta()
-   
-   const card2 = comprarCarta() 
-   
-   const card3 = comprarCarta()
-   
-   const card4 = comprarCarta()
+   const card1 = comprarCarta(), card2 = comprarCarta(), card3 = comprarCarta(), card4 = comprarCarta()
 
 // Distirbuição das cartas para cada mão e cálculo de valor
 
-   let userHand =[card1.texto, card2.texto, card1.valor, card2.valor]
+   let userHand =[card1, card2]
    let totalUserhand = Number(card1.valor+card2.valor)
-   let pcHand = [card3.texto, card4.texto, card3.valor, card4.valor]
+   let pcHand = [, card3, card4]
    let totalPChand = Number(card3.valor+card4.valor)
 
 // Mensagens no console
 
-   console.log('Usuário - cartas:', userHand[0], userHand[1], '- pontuação', totalUserhand)
-
- 
-   console.log('Computador - cartas:', pcHand[0],pcHand[1], '- pontuação', totalPChand)
+   console.log('Usuário - cartas:', card1.texto, card2.texto, '- pontuação', totalUserhand)
+   console.log('Computador - cartas:', card3.texto, card4.texto, '- pontuação', totalPChand)
 
 // Condições para empate, vencedor ou perdedor
 
