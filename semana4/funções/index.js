@@ -51,3 +51,83 @@
 
 // EXERCÍCIO 04
 
+
+// a)
+
+// function escreveInfos() {
+//     console.log ("Eu sou Will, tenho 27 anos, moro em Belo Horizonte e sou advogado e estudante.")
+// } 
+
+// escreveInfos()
+
+// b) 
+
+// function escreveInfosRecebidas(nome, idade, cidade, estudante) {
+    
+//     nome  = prompt("Qual seu nome?")
+//     idade = Number(prompt("Qual a sua idade"))    
+//     cidade = prompt("Qual cidade você mora?'")
+//     estudante = prompt("Você é estudante?")
+
+        
+//     if (estudante === "sim"){
+//         estudante = "sou estudante!"
+//     }
+    
+//     else {
+//         estudante = "não sou estudante"
+//     }
+
+//     console.log ("Eu sou", nome, 'tenho', idade, 'anos, moro em', cidade, 'e', estudante );
+
+// } 
+
+// escreveInfosRecebidas()
+
+// EXERCÍCIO 05
+
+// a)
+// function soma2numeros(num1,num2){
+    
+//     const soma = num1 + num2
+    
+//     return soma
+// }
+
+// let resultado = soma2numeros()
+
+// console.log(resultado)
+
+// b)
+
+// function confereNumeros(num1,num2){
+        
+//     if(num1>num2){
+//         var maior = true
+//         console.log('O primeiro número é o maior')
+//         return maior 
+//     }
+    
+//     else if(num1===num2) {
+//        var igual = true
+//         console.log('O primeiro número é igual ao segundo')
+//         return igual
+//     }
+//     else {
+//         console.log('O primeiro número é menor que o segundo.')
+//     }
+// }
+
+// c) 
+
+// function escreveDezvezes (texto){
+
+//    texto = [prompt("Escreva alguma coisa!")]
+
+//    for(let i=0; i < 11; i++)
+
+//    console.log(texto)
+   
+// }
+
+// escreveDezvezes()
