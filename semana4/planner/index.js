@@ -6,6 +6,12 @@ function criarTarefa (){
 
     const userInput = input.value
 
+    if(userInput.length == ''){
+        alert('Você não incluiu sua tarefa!');
+        
+        return false
+        }
+    else {
     const weekDay = document.getElementById('dias-semana').value
 
     const divDay = document.getElementById(weekDay)
@@ -15,6 +21,7 @@ function criarTarefa (){
     clear.onclick = input.value =""
 
     return input
+  }
 }    
 
 function clear(){
