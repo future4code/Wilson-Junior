@@ -25,7 +25,7 @@ function imprimirExtrato(){
 
 
     // AQUI VEM A IMPLEMENTAÇÃO
-// Filtra o Array arrDespesas e salva os objetos que são do tipo alimentação reservando o valor gasto na variável valorAlimentaçao
+// Salva os objetos que são do tipo alimentação reservando o valor gasto na variável valorAlimentaçao
     const alimentacao = arrDespesas.filter((despesas)=>{
         return despesas.tipo === "alimentação"
     })
@@ -33,9 +33,11 @@ function imprimirExtrato(){
     const valorAlimentacao = alimentacao.map((nome, index, lista)=>{
         return nome.valor
     })
-    console.log(alimentacao)
-    console.log(valorAlimentacao)
-// Filtra o Array arrDespesas e salva os objetos que são do tipo utilidades reservando o valor gasto na variável valorUtilidades
+    // Soma todos os valores do array valorAlimentacao
+        gastoAlimentacao = valorAlimentacao.reduce(
+            ( acumulador, valorAtual ) => acumulador + valorAtual, 0);
+        
+// Salva os objetos que são do tipo utilidades reservando o valor gasto na variável valorUtilidades
     const utilidades = arrDespesas.filter((despesas)=>{
      return despesas.tipo === "utilidades"
     })
@@ -43,9 +45,11 @@ function imprimirExtrato(){
     const valorUtilidades = utilidades.map((nome, index, lista)=>{
      return nome.valor
     })
-    console.log(utilidades)
-    console.log(valorUtilidades)
-// Filtra o Array arrDespesas e salva os objetos que são do tipo viagens reservando o valor gasto na variável valorViagem
+    // Soma todos os valores do array valorAlimentacao
+        gastoUtilidades = valorUtilidades.reduce(
+            ( acumulador, valorAtual ) => acumulador + valorAtual, 0);
+    
+// Salva os objetos que são do tipo viagem reservando o valor gasto na variável valorViagem
     const viagem = arrDespesas.filter((despesas)=>{
      return despesas.tipo === "viagem"
     })
@@ -53,10 +57,12 @@ function imprimirExtrato(){
     const valorViagem = viagem.map((nome, index, lista)=>{
      return nome.valor
     })
-    console.log(viagem)
-    console.log(valorViagem)
+    // Soma todos os valores do array valorAlimentacao
+    gastoViagem = valorViagem.reduce(
+        ( acumulador, valorAtual ) => acumulador + valorAtual, 0);
 
-
+    // Soma todos os gastos
+    gastoTotal = gastoAlimentacao + gastoUtilidades + gastoViagem
 
 
     divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$${gastoTotal} | Alimentação: R$${gastoAlimentacao} | 
@@ -109,7 +115,7 @@ function filtrarDespesas(){
 
 
     let despesasFiltradas // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
-
+    
     imprimirDespesas(despesasFiltradas)
 }
 
