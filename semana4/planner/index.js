@@ -11,7 +11,9 @@ function criarTarefa (){
         
         return false
         }
+        
     else {
+
     const weekDay = document.getElementById('dias-semana').value
 
     const divDay = document.getElementById(weekDay)

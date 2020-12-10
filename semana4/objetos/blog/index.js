@@ -3,14 +3,15 @@
 function salvaTudo(){
 
     var titulo = document.getElementById("titulo-post");
-    let userTitulo = [titulo.value];
+    let userTitulo = titulo.value;
 
     var autor = document.getElementById("autor-post");
-    let userAutor = [autor.value];
+    let userAutor = autor.value;
 
     var conteudo = document.getElementById("conteudo-post");
-    let userConteudo = [conteudo.value];
+    let userConteudo = conteudo.value;
     
+
     // Emite um alerta se o usuário deixar em branco
     if(userTitulo.length == ''  | userAutor.length == '' | userConteudo.length  == ''){
         
@@ -22,42 +23,46 @@ function salvaTudo(){
     //Salva o conteúdo 
     else {
     
-    var titulo = document.getElementById("titulo-post");
-    let userTitulo = [titulo.value];
-
-    var autor = document.getElementById("autor-post");
-    let userAutor = [autor.value];
-
-    var conteudo = document.getElementById("conteudo-post");
-    let userConteudo = [conteudo.value];
-
-
-        var text = {
-            title: userTitulo,
-            author: userAutor,
-            content:userConteudo
+        const text = {
+            title: [userTitulo],
+            author: [userAutor],
+            content:[userConteudo]
         }
         
-        var i;
+        console.log('Eu sou o título', text.title)
+        console.log('Eu sou o autor', text.author)
+        console.log('Eu sou o conteúdo', text.content)
+       
+        let i;
         
-        for (i = 0; i < userTitulo.length ;i++) {
-        text += userTitulo.elements[i].value + "<br>";
+        for (i = 0; i < titulo.length; i++) {
+        text += titulo.elements[i].value;
         }
 
-        document.getElementById("container-de-posts").innerHTML = text.title;
+        let j;
 
-        for (i = 0; i < userAutor.length ;i++) {
-            text += userAutor.elements[i].value + "<br>";
+        for (j = 0; j < autor.length; j++) {
+            text += autor.elements[j].value;
         }
         
-        document.getElementById("container-de-posts").innerHTML = text.author;
+        let k;
         
-        for (i = 0; i < userConteudo.length ;i++) {
-            text += userConteudo.elements[i].value + "<br>";
+        for (k = 0; k < conteudo.length; k++) {
+            text += conteudo.elements[k].value;
         }  
 
-        document.getElementById("container-de-posts").innerHTML = text.content;
+        document.getElementById("container-de-posts").innerHTML = `<p class="item">${text.title}</p>`+ 
+        `<p class="item">${text.author}</p>` + `<p class="item">${text.content}</p>`;
+        
+        
+        titulo.value = ""
+
+        autor.value = ""
+
+        conteudo.value = ""
+
     }        
 
 }
+
 
