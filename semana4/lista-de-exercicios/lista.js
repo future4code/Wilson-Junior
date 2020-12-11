@@ -187,7 +187,48 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
     }
    
 // ----------------------------------- Exercícios de Funções --------------------------------------//
+    // EXERCÍCIO 01
 
+    const arrayNumeros = [0, 1, 2, -5, 17, 100, 4, 350, 400, -76]
+    console.log(arrayNumeros)
+    function maiorEmenor(){
+        
+        let maior;
+        let menor;
+
+        let segundoMaior;
+        let segundoMenor;
+
+        for (let j = 0; j <= arrayNumeros.length; j++) {
+
+            if (arrayNumeros[j] > 0){
+                maior = arrayNumeros[j]
+            }
+
+            else if (arrayNumeros[j] <= 0 ){
+                menor = arrayNumeros[j]
+               
+            }
+        }
+
+        for (let j = 0; j <= arrayNumeros.length; j++){
+            if ( arrayNumeros[j] < maior && arrayNumeros[j] > segundoMaior ){
+                segundoMaior = arrayNumeros[j]
+            }
+
+            else if (arrayNumeros[j] < segundoMenor && arrayNumeros[j > menor] ){
+                segundoMenor = arrayNumeros[j]
+               
+            }
+              
+        }
+               
+        console.log(maior)
+        console.log(menor)     
+     
+        console.log(segundoMaior)
+        console.log(segundoMenor)
+    } 
 
 
 
