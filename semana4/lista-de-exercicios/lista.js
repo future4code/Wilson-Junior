@@ -189,48 +189,52 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
 // ----------------------------------- Exercícios de Funções --------------------------------------//
     // EXERCÍCIO 01
 
-    const arrayNumeros = [0, 1, 2, -5, 17, 100, 4, 350, 400, -76]
-    console.log(arrayNumeros)
-    function maiorEmenor(){
+    function segMaiorsegMenor(arrayNumeros){
         
-        let maior;
-        let menor;
+        let maiorNum = -Infinity;
+        let menorNum = Infinity;
 
-        let segundoMaior;
-        let segundoMenor;
+        let segNumMaior = -Infinity;
+        let segNumMenor = Infinity;
 
         for (let j = 0; j <= arrayNumeros.length; j++) {
 
             if (arrayNumeros[j] > 0){
-                maior = arrayNumeros[j]
+                maiorNum = arrayNumeros[j]
             }
 
             else if (arrayNumeros[j] <= 0 ){
-                menor = arrayNumeros[j]
+                menorNum = arrayNumeros[j]
                
             }
         }
 
+        console.log(maiorNum)
+        console.log(menorNum)  
+
         for (let j = 0; j <= arrayNumeros.length; j++){
-            if ( arrayNumeros[j] < maior && arrayNumeros[j] > segundoMaior ){
-                segundoMaior = arrayNumeros[j]
+            if ( arrayNumeros[j] > segNumMaior && arrayNumeros[j] < maiorNum ){
+                segNumMaior = arrayNumeros[j]
             }
 
-            else if (arrayNumeros[j] < segundoMenor && arrayNumeros[j > menor] ){
-                segundoMenor = arrayNumeros[j]
+            else if (arrayNumeros[j] < segNumMenor && arrayNumeros[j] > menorNum ){
+                segNumMenor = arrayNumeros[j]
                
             }
               
-        }
-               
-        console.log(maior)
-        console.log(menor)     
+        }  
      
-        console.log(segundoMaior)
-        console.log(segundoMenor)
+        console.log(segNumMaior)
+        console.log(segNumMenor)
     } 
 
+    // EXERCÍCIO 02
 
+    let Hi = () => { 
+        
+     return alert("Oi Labenu!")
+      
+    }
 
 // ----------------------------------- Exercícios de Objetos --------------------------------------//
 
