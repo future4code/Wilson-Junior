@@ -301,3 +301,138 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
     
     
 // ------------------------------- Exercícios de Funções de Array ---------------------------------//
+
+// EXERCÍCIO 01
+
+    let arrayDePessoas = [
+	    { nome: "Pedro", idade: 20 },
+	    { nome: "João", idade: 10 },
+	    { nome: "Paula", idade: 12 },
+	    { nome: "Artur", idade: 89 } 
+    ]
+
+    //a) RETORNA ADULTOS  
+    const adultos = arrayDePessoas.filter((pessoa) =>{
+        return pessoa.idade >= 20
+      })
+
+    //b) RETORNA CRIANÇAS  
+    const criancas = arrayDePessoas.filter((pessoa) =>{
+        return pessoa.idade < 20
+     })
+    
+// EXERCÍCIO 02
+
+ const arrayTeste = [1, 2, 3, 4, 5, 6]
+    
+ //  a) MUTIPLICA POR 2
+     const multiplicaPor2 = arrayTeste.map((e) => {
+        return e*2
+    })
+
+ //  b) MUTIPLICA POR 3
+
+    const multiplicaPor3 = arrayTeste.map((e) => {
+        let arrayPor3 = e*3
+        return arrayPor3.toString()
+    })
+
+ // c) Diz PAR ou ÍMPAR
+
+  const parOuImpar = arrayTeste.map((e) => {
+        
+        if ( e % 2 === 0){
+        return impar = `${e} é par.`
+        }
+
+        else {
+        return impar = `${e} é impar.`
+        }  
+    })
+// EXERCÍCIO 03
+    const pessoas = [
+    { nome: "Paula", idade: 12, altura: 1.8},
+    { nome: "João", idade: 20, altura: 1.3},
+    { nome: "Pedro", idade: 15, altura: 1.9},
+    { nome: "Luciano", idade: 22, altura: 1.8},
+    { nome: "Artur", idade: 10, altura: 1.2},
+    { nome: "Soter", idade: 70, altura: 1.9}
+    ]
+
+    // a) Filtro de permissão de entrada no brinquedo
+
+    const permitidos = pessoas.filter((filtraP) =>{
+        if (filtraP.altura >= 1.5 && 60 > filtraP.idade && filtraP.idade > 14){
+
+        return filtraP.nome
+        }
+    })
+
+    // b) Pessoas que não podem entrar no brinquedo
+
+    const naoPermitidos = pessoas.filter((filtraP) =>{
+        if (filtraP.altura < 1.5 || 60 < filtraP.idade || filtraP.idade < 14){
+
+        return filtraP.nome
+        }
+    })
+
+// EXERCÍCIO 04
+
+    const consultas = [
+        { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+        { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+        { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+        { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+    ]
+
+    const emails = consultas.map((consulta) => {
+        
+        let emailFinal = "Olá, "
+      
+            if(consulta.cancelada) {
+            
+             if(consulta.genero === "feminino") {
+             emailFinal += "Sra. "
+             } 
+            
+             else {
+             emailFinal += "Sr. "
+             }
+        
+             emailFinal += consulta.nome + ". "
+             emailFinal += "Estamos enviando esta mensagem para "
+        
+             if(consulta.genero === "feminino") {
+                emailFinal += "lembrá-la "
+             } 
+             
+             else {
+                emailFinal += "lembrá-lo "
+             }
+        
+             emailFinal += "da sua consulta no dia " + consulta.dataDaConsulta + ". "
+             emailFinal += "Por favor, acuse o recebimento deste-email."
+            } 
+            
+            else {
+        
+             if(consulta.genero === "feminino") {
+                emailFinal += "Sra. "
+             } 
+             else {
+                emailFinal += "Sr. "
+             }
+        
+             emailFinal += consulta.nome + ". "
+             emailFinal += "Infelizmente sua consulta marcada para o dia "
+        
+             emailFinal += consulta.dataDaConsulta + " foi cancelada. "
+             emailFinal += "Se quiser, pode entrar em contato conosco para remarcá-la."
+            }
+            
+            return emailFinal
+    })
+
+
+
