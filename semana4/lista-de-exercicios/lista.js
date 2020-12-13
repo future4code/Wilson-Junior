@@ -237,9 +237,67 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
     }
 
 // ----------------------------------- Exercícios de Objetos --------------------------------------//
+    // EXERCÍCIO 01
+        /* Array e Obejtos são muito similares no que diz respeito a listagem de elementos. O próprio JavaScript retorna 
+    o tipo array como um objeto. Enfim, o array é essa lista que coisas podem ser incrementadas, removidas dentro e que a
+    organização ocorre basicamente pelo índice atribuído àquele elemento. Os objetos, como dito em sala, são como um gaveta
+    com dividósrias, é uma forma de listar e oraganizar elementos, coisas, funções de modo que seja possível acessar cada
+    um destes rapidamente com apenas a utilização da notação de ponto. Enfim, cada um apresenta uma funcionalidade o que permite
+    felxibilidade dentro do código. Se minha necessidade é de uma listagem simples não justifica a utilização de objeto, isto porque
+    há certa complexidade para a manipulação dessa funcionalidade. O array permite essa listagem rápida, e de modo mais simples. 
+    Porém, em caso de complexidade no armazenamento de informações, ou mesmo maior detalhamento do que está sendo inserido
+    a funcionalidade do objeto permitirá maior facilidade em ordenar e listar o que for necessário.
+    */
 
+    // EXERCÍCIO 02
 
+    function criaRetangulo (lado1,lado2) {
 
+        const Retangulo = {
+         largura: lado1, 
+         altura: lado2, 
+         perímetro: 2*(lado1 + lado2), 
+         área: lado1*lado2
+        }
+        
+        return Retangulo
+    }
 
+    // EXERCÍCIO 03
+    
+    function filmeFavorito (){
 
+        const filme = {
+        
+         titulo:"Escritores da Liberdade",
+         ano: 2007,
+         diretor: "Richard LaGravenese",
+         atores: ["Hilary Swank", "Patrick Dempsey", "Imelda Staunton", "Scott Glen"]
+
+        }
+        
+        var resultado = `Venha assistir ao filme ${filme.titulo} de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}`
+        
+        return resultado
+    }
+    // EXERCÍCIO 04
+
+    const pessoaAvulsa = {
+        nome: "Frederico",
+        idade: 30,
+        email: "fred@amazon.com",
+        endereco: "Rua Nova, nº 35"
+    }
+
+    function anonimizar(pessoa){
+
+        return {
+            nome: "ANONIMO",
+            idade: pessoaAvulsa.idade,
+            email: pessoaAvulsa.email,
+            endereco: pessoaAvulsa.endereco
+        }
+    }
+    
+    
 // ------------------------------- Exercícios de Funções de Array ---------------------------------//
