@@ -349,7 +349,7 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
         return impar = `${e} é impar.`
         }  
     })
-// EXERCÍCIO 03
+// EXERCÍCIO 03 - PARQUE DE DIVERSÃO
     const pessoas = [
     { nome: "Paula", idade: 12, altura: 1.8},
     { nome: "João", idade: 20, altura: 1.3},
@@ -377,7 +377,7 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
         }
     })
 
-// EXERCÍCIO 04
+// EXERCÍCIO 04 - CONSULTÓRIO MÉDICO
 
     const consultas = [
         { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
@@ -433,6 +433,29 @@ no prompt que surgirá para ele requerendo o valor de cotação. No exemplo, con
             
             return emailFinal
     })
+
+// EXERCÍCIO 05 - FUNCIONALIDADE BANCO DIGITAL
+
+    const contas = [
+        { cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+        { cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+        { cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+        { cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+        { cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+        { cliente: "Soter", saldoTotal: 1200, compras: [] }
+    ]
+    // Função que observa cada um dos objetos da variável contas.
+    contas.forEach((conta) => {
+        
+        let totalDeCompras = 0
+        // Função que analisa o array compras dentro do objeto. 
+     conta.compras.forEach((valor) => {
+        totalDeCompras += valor
+     })
+
+        conta.saldoTotal -= totalDeCompras
+    })
+
 
 
 
