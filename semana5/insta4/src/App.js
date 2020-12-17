@@ -32,24 +32,42 @@ class App extends React.Component {
     };
 
   
-
+    // Cria o novo array de posts com os valores capturados dos inputs
     adicionaPost = () => {
-      // Variável do novo post
+      
       const inputPost = {
-      // Capta o valor do inputNome
         nome: this.state.inputNome,
-      // Capta o valor do inputFoto
+      
         foto: this.state.inputFoto,
-      // Capta o valor do inputFatoPost
+      
         fotoPost: this.state.inputFotoPost
       };
-
-      // Faz a cópia do array principal e cria um elemento novo
+      
       const newPost = [...this.state.userPost, inputPost];
+      
+      this.setState({ userPost: newPost });
+      
+    };
+
+    // Funções que são aplicadas quando digitam nos campos de input
+    onChangeInputNome = (event) => {
+      
+      this.setState({ inputNome: event.target.value });
+    };
+  
+    onChangeInputFoto = (event) => {
+      
+      this.setState({ inputFoto: event.target.value });
+    };
+
+    onChangeInputFotoPost = (event) => {
+      
+      this.setState({ inputFotoPost: event.target.value });
+    };
  
 
 render() {
-
+  
   const userPost = this.state.userPost.map((post) => {
     return  <Post
             nome={post.nome}
@@ -59,9 +77,35 @@ render() {
   })
 
   return (
-      <div className={'app-container'}>
-      {userPost}        
+    <div className={'app-container'}>
+      <div className={"novo-post"}>
+        <input
+          value={this.state.inputNome}
+          onChange={this.onChangeInputNome}
+          placeholder={"Nome"}
+          />
+          
+        <input
+          value={this.state.inputFoto}
+          type= "url"
+          onChange={this.onChangeInputFoto}
+          placeholder={"Link de sua foto"}
+          />
+
+        <input
+          value={this.state.inputFotoPost}
+          type= "url"
+          onChange={this.onChangeInputFotoPost}
+          placeholder={"Link da foto do Post"}
+          />
+
+        <p><button onClick={this.adicionaPost}>Adicionar</button></p>
       </div>
+
+      {userPost}        
+
+    </div>
+      
     );
   }
 }
