@@ -1,0 +1,30 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 3%;
+    margin: 4%;
+}
+
+.btn {
+    background: #289c43;
+    background: linear-gradient(#093112 #50d19e);
+    border: none;
+    border-radius: 15px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 6px 18px 6px 18px;
+    width: 10%;
+    display: block;
+    align-self: center;
+    margin-top: 3%;
+}
+  
+  .btn:hover {
+    background: #3cb0fd;
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+ }
