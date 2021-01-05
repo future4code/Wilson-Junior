@@ -1,7 +1,9 @@
 import React from 'react';
+import ImagemButton from '../ImagemButton/ImagemButton';
 import './CardPequeno.css';
 
 function CardPequeno(props){
+   
     return (
         
         <div className="smallcard-container">
@@ -14,7 +16,6 @@ function CardPequeno(props){
         </div>
     
     )
-
 } 
 
 export default CardPequeno;

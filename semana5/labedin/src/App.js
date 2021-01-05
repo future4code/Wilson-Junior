@@ -66,7 +66,7 @@ function App() {
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
         <CardGrande 
-          imagem="https://s3.amazonaws.com/future4.com.br/static/headf4-c492117ca2373dc85ca81bf715b3dc2a.png" 
+          imagem="https://images.typeform.com/images/7GzUucn7Y5wP/image/default" 
           nome="Labenu" 
           descricao="Dedicando aos projetos da melhor forma possível" 
         />

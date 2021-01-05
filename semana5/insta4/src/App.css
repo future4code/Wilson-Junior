@@ -1,0 +1,25 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.novo-post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  width: 300px;
+  margin-top: 2%;
+  margin-right: 60%;
+  align-items: center;
+
+}
+
+.novo-post input {
+  text-align: center;
+  margin-top: 2%;
+  
+  
+
+}
