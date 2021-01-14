@@ -96,11 +96,9 @@ function App() {
   }
 
   const deleteUser = (id) => {
-    console.log(id)
-
     axios
       .delete(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id", 
+        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`, 
         {
           headers: {
             Authorization: "wilson-ferreira-epps"
@@ -108,14 +106,14 @@ function App() {
         },
       )  
       .then((res) => {
-        console.log('Usuário deletado')
+        alert('Usuário deletado')
+        showAllUsers()
       })
       .catch((error) => {
         console.log(error)
       });
   }
   
-  // Pega os nomes
   const nameList = userList.map(n => {
       console.log(n.id)
     return (
@@ -158,9 +156,7 @@ function App() {
 
     return (
       <div className="App">
-       
          {nameList}
-      
         <p>
           <button onClick={returnToHome}>Voltar</button>
         </p>
