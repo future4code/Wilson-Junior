@@ -2,6 +2,20 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import InputBox from './components/InputBox';
 import axios from 'axios';
+import styled from 'styled-components';
+
+
+const Sticker = styled.div `
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: auto;
+  font-size:17px;
+  width: 300px;
+`
 
 function App() {
 
@@ -65,15 +79,13 @@ function App() {
       });
   }
 
-  console.log(userList)
-
   const [pageList, setPageList] = useState(false)
 
-  useEffect(() => {
-    if (pageList === true){
-     showAllUsers()
-    }
-  }, [pageList]); 
+    useEffect(() => {
+      if (pageList === true){
+      showAllUsers()
+      }
+    }, [pageList]); 
   
   let changeToPageList = () => {
     setPageList(true);
@@ -83,11 +95,36 @@ function App() {
     setPageList(false)
   }
 
+  const deleteUser = (id) => {
+    console.log(id)
+    axios
+    .delete(
+      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id", 
+      {
+        headers: {
+          Authorization: "wilson-ferreira-epps"
+        }
+      },
+    )  
+    .then((res) => {
+      console.log('Usuário deletado')
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+  }
+  
   // Pega os nomes
   const nameList = userList.map(n => {
-    return <p>{n.name}</p>
-  })
-
+      console.log(n.id)
+    return (
+      <Sticker key={n.id}>
+        {n.name}
+        <button  onClick={() => deleteUser(n.id)}>x</button>
+      </Sticker>
+    ) 
+  });
+ 
   if (pageList === false) {
 
     return (
@@ -120,9 +157,9 @@ function App() {
 
     return (
       <div className="App">
-        <p>
+       
          {nameList}
-        </p>
+      
         <p>
           <button onClick={returnToHome}>Voltar</button>
         </p>
