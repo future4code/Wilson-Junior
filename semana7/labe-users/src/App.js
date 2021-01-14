@@ -97,21 +97,22 @@ function App() {
 
   const deleteUser = (id) => {
     console.log(id)
+
     axios
-    .delete(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id", 
-      {
-        headers: {
-          Authorization: "wilson-ferreira-epps"
-        }
-      },
-    )  
-    .then((res) => {
-      console.log('Usuário deletado')
-    })
-    .catch((error) => {
-      console.log(error)
-    });
+      .delete(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id", 
+        {
+          headers: {
+            Authorization: "wilson-ferreira-epps"
+          }
+        },
+      )  
+      .then((res) => {
+        console.log('Usuário deletado')
+      })
+      .catch((error) => {
+        console.log(error)
+      });
   }
   
   // Pega os nomes
