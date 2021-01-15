@@ -1,0 +1,42 @@
+.App {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px solid #b172b1;
+  border-radius: 7%;
+  margin: 2%;
+  padding: 2%;
+  background-color: #E6E6FA;
+  width: 50vw;
+  height: 50vh;
+}
+
+.card-container > button {
+    background-color: #c987c9;
+    display: flex;
+    border: none;
+    border-radius: 8px;
+    box-shadow: black 20px;
+    color: rgb(7, 7, 7);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 1%;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
