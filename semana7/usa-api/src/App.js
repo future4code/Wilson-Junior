@@ -84,9 +84,14 @@ class App extends React.Component {
             <div className="poke-card">
              
               {this.state.PokeImage && <img alt={'imagem_poke'} src={this.state.PokeImage}/>}
-              
-              {this.state.PokeAbilities}
+              <div>
+                <p>Name: </p>
+                <p>Main Ability: {this.state.PokeAbilities} </p>
+                <p>Type:</p>
+                <p>Habitat:</p>
+              </div>
             </div>
+      
      
 
           </div>

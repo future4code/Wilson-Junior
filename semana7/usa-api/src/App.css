@@ -37,7 +37,7 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  width: auto;
+  width: 50%;
   height: auto;
   margin: auto;
   background-color: #FFF;
@@ -45,6 +45,12 @@
   border: none;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+}
+
+.poke-card > img {
+  width: 45%;
+  height: auto;
+  margin: auto;
 }
 
 .list {
