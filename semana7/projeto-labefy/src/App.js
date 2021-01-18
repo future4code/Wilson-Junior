@@ -3,22 +3,10 @@ import './App.css';
 import InputBox from './components/InputBox';
 import axios from 'axios';
 import styled from 'styled-components';
-
-
-const Sticker = styled.div `
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #000;
-  background-color: pink;
-  border-radius: 5px;
-  margin: auto;
-  font-size:17px;
-  width: 300px;
-`
+import Drop from './components/DropDown'
 
 function App() {
-  
+
   // States 
   const [userList, setUserList] = useState([]);
 
@@ -36,15 +24,15 @@ function App() {
 
   const [pageList, setPageList] = useState(false)
 
- // Functions HANDLE Inputs
+  // Functions HANDLE Inputs
   function handleName(newName) {
-  setInputName(newName);
+    setInputName(newName);
   }
 
   function handleSearch(newSearch) {
-  setInputSearch(newSearch);
+    setInputSearch(newSearch);
   }
- 
+
   function handleSong(newTrack) {
     setInputSong(newTrack);
   }
@@ -57,14 +45,14 @@ function App() {
     setInputUrl(newUrl);
   }
 
- // Functions EFFECTS
-    useEffect(() => {
-      if (pageList === true){
+  // Functions EFFECTS
+  useEffect(() => {
+    if (pageList === true) {
       getAllPlayList()
-      }
-    }, [pageList]);
+    }
+  }, [pageList]);
 
- // Functions BOOLEANS
+  // Functions BOOLEANS
   let changeToPageList = () => {
     setPageList(true);
   }
@@ -73,9 +61,9 @@ function App() {
     setPageList(false)
   }
 
- // Functions AXIOS
+  // Functions AXIOS
   const getAllPlayList = () => {
-    
+
     axios
       .get(
         "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
@@ -94,7 +82,7 @@ function App() {
   }
 
   const searchPlayList = (string) => {
-    
+
     axios
       .get(
         `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=${string}`,
@@ -138,25 +126,25 @@ function App() {
 
   const deletePlayList = (id) => {
     axios
-     .delete(
-       `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`, 
-       {
-         headers: {
-           Authorization: "wilson-ferreira-epps"
-         }
-       },
-     )  
-     .then((res) => {
-       alert('PlayList deletada com sucesso!')
-       getAllPlayList() 
-     })
-     .catch((error) => {
-       console.log(error)
-     });
- }
+      .delete(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`,
+        {
+          headers: {
+            Authorization: "wilson-ferreira-epps"
+          }
+        },
+      )
+      .then((res) => {
+        alert('PlayList deletada com sucesso!')
+        getAllPlayList()
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
 
- // SONGS
-   const addTrackToPlaylist = (d) => {
+  // SONGS
+  const addTrackToPlaylist = (d) => {
     const body = {
       name: inputSong,
       artist: inputArtist,
@@ -182,7 +170,7 @@ function App() {
   }
 
   const getPlaylistTracks = (playlistId) => {
-    
+
     axios
       .get(
         `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}/tracks
@@ -201,54 +189,55 @@ function App() {
       });
   }
 
-  
-  // Functions ARRAY
+
+  // Functions - ARRAY
   const mapPlayList = userList.map(m => {
     return (
-    <>   
+      <>
         <div className="card-container" key={m.id}>
-          {m.name}
-          <button  onClick={() => getPlaylistTracks(m.id)}>Mostrar conteúdo da playlist</button>
-    
-          <InputBox
-          frase="Digite o nome da música"
-          onChangeText={handleSong}
-          />
-          <InputBox
-          frase="Digite do artista"
-          onChangeText={handleArtist}
-          />
-          <InputBox
-          frase="Digite a url"
-          onChangeText={handleUrl}
-          />
-          <button  onClick={() => addTrackToPlaylist(m.id)}>Adicionar Música</button>
+        <Drop
+        title={m.name}/>
+          <button onClick={() => getPlaylistTracks(m.id)}>Mostrar conteúdo da playlist</button>
         
-          <button  onClick={() => deletePlayList(m.id)}>Deletar</button>
+          <InputBox
+            frase="Digite o nome da música"
+            onChangeText={handleSong}
+          />
+          <InputBox
+            frase="Digite do artista"
+            onChangeText={handleArtist}
+          />
+          <InputBox
+            frase="Digite a url"
+            onChangeText={handleUrl}
+          />
+          <button onClick={() => addTrackToPlaylist(m.id)}>Adicionar Música</button>
+
+          <button onClick={() => deletePlayList(m.id)}>Deletar</button>
+
         </div>
-    </>
-    ) 
+      </>
+    )
   });
- 
+
   if (pageList === false) {
 
     return (
       <div className="App">
 
         <h1>Labefy</h1>
-
         <p>
-          Buscar PlayList: 
+          Buscar PlayList:
           <InputBox
             frase="Digite o nome da playlist que deseja buscar"
             onChangeText={handleSearch}
           />
-          <button  onClick={() => {searchPlayList(inputSearch)}}>Buscar</button> 
+          <button onClick={() => { searchPlayList(inputSearch) }}>Buscar</button>
         </p>
         <p>
-         {searchedPlayList}
+          {searchedPlayList}
         </p>
-        
+
 
         <p>
           Adicionar PlayList
@@ -262,7 +251,7 @@ function App() {
         <p>
           <button onClick={changeToPageList}>Mostrar todas as Playlists</button>
         </p>
-
+        
       </div>
     );
   } else {
@@ -270,9 +259,9 @@ function App() {
     return (
       <div className="App">
         <h1>Labefy</h1>
-         
-         {mapPlayList}
-      
+
+        {mapPlayList}
+
         <p>
           <button onClick={returnToHome}>Voltar</button>
         </p>

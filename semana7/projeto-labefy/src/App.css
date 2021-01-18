@@ -16,17 +16,17 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  border: 3px solid #b172b1;
+  border: 3px solid #005b9f;
   border-radius: 7%;
   margin: 2%;
   padding: 2%;
-  background-color: #E6E6FA;
+  background-color: #005b9f;
   width: 50vw;
   height: 50vh;
 }
 
 .card-container > button {
-    background-color: #c987c9;
+    background-color: #5eb8ff;
     display: flex;
     border: none;
     border-radius: 8px;

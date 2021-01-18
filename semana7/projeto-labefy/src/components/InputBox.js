@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const InputText = styled.input `
-    border: 2px solid #c987c9; 
-    border-radius: 5px;
+    border: 2px solid #005b9f; 
+    border-radius: 8px;
     margin: 1%;
     padding: 2%;
     font-size:12px;
