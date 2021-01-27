@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15%;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  margin: 5% 35%;
+  width: 25vw;
+  height: 50vh;
+}
+
+.Objeto {
+  position: absolute;
+  text-align: center;
+  margin-bottom: 250px;
+  padding: 200px;
+  outline: 0;
+}
