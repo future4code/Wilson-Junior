@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-
 export const FooterBar = styled.div `
     display: flex;
+    align-self: center;
     justify-content: space-between;
     margin-bottom: 10%;
-    width: 100%;
-    height: 15%;
+    width: 90%;
+    height: 10%;
     overflow: hidden;
   
    input {
