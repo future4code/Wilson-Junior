@@ -4,7 +4,7 @@ import Container from './components/Container/styled';
 import Header from './components/Header/index';
 import Card from './components/Card/index'
 import Footer from './components/Footer/index'
-// import List from './components/Matches/index'
+import Matches from './components/Matches/index'
 import axios from 'axios';
 
 const baseURL = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:Wilson/'
@@ -30,7 +30,7 @@ function App() {
   .catch(err => {
     console.log(err)
   });
-}
+ }
 
  const postMatch = () => {
     const body = {
@@ -40,13 +40,24 @@ function App() {
     axios 
     .post(baseURL+'choose-person', body)
     .then(res => {
-      setList(res.data)
-      getPerson()
+      getPerson();
+      setMatch();
     })
     .catch(err => {
       console.log(err)
     });
   };
+
+  const getMactches = () => {
+    axios 
+    .get(baseURL+'matches')
+    .then(res => {
+      setList(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    });
+   }
 
   const refreshMatch = () =>{
     axios 
@@ -73,6 +84,7 @@ function App() {
   // Outras funções
     const handleHome = () => {
       setHome(true);
+      getMactches();
     }
 
     const handleBackHome = () => {
@@ -114,6 +126,10 @@ function App() {
     <Container>
       <Header
         change ={handleBackHome}
+      />
+      <Matches
+        person = {person}
+        list = {list}
       />
     </Container>
     )

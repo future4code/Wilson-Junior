@@ -1,18 +1,19 @@
-// import React from 'react'
-// import CardBox from './styled';
+import React from 'react'
+import MatchesList from './styled';
 
 
-// export const Card = (props) => {
-         
-//     return (
-//     <>{props.person &&         
-//         <CardBox>
-//             <img src={props.person.photo} alt={props.person.name}/>
-//             <h2>{props.person.name},{props.person.age}</h2>
-//             <p>{props.person.bio}</p>
-//         </CardBox>}
-//     </>
-//     );
-// }
+export const Matches = (props) => {
+         console.log(props.list.matches)  
 
-// export default Card;
+
+    return (
+    <>{props.person &&         
+        <MatchesList>
+            {/* <img src={props.list.photo} alt={props.list.name}/>
+            <h2>{props.list.name}</h2> */}
+        </MatchesList>}
+    </>
+    );
+}
+
+export default Matches;
