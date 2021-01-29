@@ -6,9 +6,9 @@ export const Header = (props) => {
     
     return (    
         <HeaderBar>
-        <img src={logoAstromatch}/>
+        <img src={logoAstromatch} alt='logo'/>
         <input 
-        type= 'image' 
+        type= 'image' alt='Icone mudar página'
         src={tinderIcon}
         onClick= {props.change}      
         />
