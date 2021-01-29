@@ -1,7 +1,7 @@
 import heartIcon from './heartIcon.png';
 import deleteIcon from './deleteIcon.png';
 import FooterBar from './styled';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export const Footer = (props) => {
     return (    
