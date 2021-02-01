@@ -3,20 +3,26 @@ import styled from 'styled-components'
 
 export const MatchesList = styled.div `
   display:flex;
-  flex-direction:row;
-  justify-content: center;
-  justify-items:flex-end; 
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
   text-align: center;
-  width: 80%;
-  height: 20%;
-  border-radius: 10%;
-  margin: 10%;
+`
+export const Item = styled.div `
+  display:flex;
+  width: 90%;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  padding: 5px;
 
   img {
-    width: 100%;
-    height:100%;
-    border-radius: 20%;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 5px;
   }
 `
-
-export default MatchesList

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HeaderBar = styled.div `
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid black;
     width: 100%;
     height: 10%;
@@ -10,15 +11,14 @@ export const HeaderBar = styled.div `
 
     img {
         width: 40%;
-        height: 350%;
-        margin-top:-65px;
-        margin-left: 25%;
+        height: 300%;
+        margin: 20%;
     }
 
     input{
         width: 10%;
         height: 85%;
-        margin: auto;
+        margin: 5%;
         background-color:transparent;
         border-radius: 50%;
         cursor: pointer;

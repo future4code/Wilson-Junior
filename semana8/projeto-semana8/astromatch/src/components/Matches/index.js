@@ -1,5 +1,7 @@
 import React from 'react'
-import MatchesList from './styled';
+import {MatchesList, Item} from './styled';
+
+
 
 
 export const Matches = (props) => {
@@ -7,8 +9,13 @@ export const Matches = (props) => {
         <>{props.list &&         
             <MatchesList>
                 {props.list && props.list.matches && props.list.matches.map((n) => {
-            
-                return <p>{n.name}</p>})}
+                    console.log (n)
+                return (
+                    <Item>
+                    <img src={n.photo} alt={n.name}/>
+                    {n.name}
+                    </Item>
+                )})}
             </MatchesList>}
         </>
     );
@@ -16,6 +23,5 @@ export const Matches = (props) => {
 export default Matches;
 
 
-   {/* <img src={props.list.photo} alt={props.list.name}/>
-                    <h2>{props.list.name}</h2> */}
+ 
 

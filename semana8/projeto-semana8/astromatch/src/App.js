@@ -105,6 +105,7 @@ function App() {
      <Container>
        <Header
           change = {handleHome}
+          refresh = {refreshMatch}
        />
        { person &&
        <Card
@@ -117,7 +118,9 @@ function App() {
           unlike = {unlike}
        />
      </Container>
-      <button type="submit" onClick={refreshMatch}>Reset</button>
+    <div className="container-button">
+      <button className="button" type="submit" onClick={refreshMatch}>Reset</button>
+    </div>
     </>
     );
   }
