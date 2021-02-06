@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { goToHomePage } from "../../Routes/Coordinator.js";
+import { goToHomePage, goToCreateTripPage } from "../../Routes/Coordinator.js";
 
 const AboutPage = () => {
  
@@ -10,6 +10,7 @@ const AboutPage = () => {
     <div>
       <h1>Página ADM</h1>
       <button onClick={() => goToHomePage(history)}>Ir para Home</button>
+      <button onClick={() => goToCreateTripPage(history)}>Criar Viagem</button>
     </div>
   );
 };
