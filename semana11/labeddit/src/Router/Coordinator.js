@@ -7,8 +7,12 @@ export const goToSubscribe = (history) => {
     history.push("/subscribe")
 }
 
-export const goToHome = (history) => {
-    history.push("/home")
+export const goToFeed = (history) => {
+    history.push("/feed")
+}
+
+export const goToPost = (history) => {
+    history.push("/post")
 }
 
 export const goToBack = (history) => {

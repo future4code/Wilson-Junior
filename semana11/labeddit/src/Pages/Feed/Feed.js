@@ -1,14 +1,14 @@
 import React, {useEffect, useContext} from 'react';
 import GlobalStateContext from '../../Global/Contexts/GlobalStateContext'
 
-function Home() {
+function Feed() {
 
   return (
     <div>
-    ...
+        <h1>Feed</h1> 
     </div>
   );
 }
 
-export default Home;
+export default Feed;
 
