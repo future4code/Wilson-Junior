@@ -1,6 +1,6 @@
 
 export const goToLogin = (history) => {
-    history.push("/")
+    history.push("/login")
 }
 
 export const goToSubscribe = (history) => {

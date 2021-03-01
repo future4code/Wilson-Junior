@@ -1,7 +1,9 @@
 import React, {useEffect, useContext} from 'react';
-import GlobalStateContext from '../../Global/Contexts/GlobalStateContext'
+import useProtectedPage from '../../Hooks/useProtectedPage';
 
 function Post() {
+  
+  useProtectedPage()
 
   return (
     <div>
