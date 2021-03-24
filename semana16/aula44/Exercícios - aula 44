@@ -1,0 +1,139 @@
+# EXERCÍCIO 01
+~~~ SQL
+CREATE TABLE Actor (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    salary FLOAT NOT NULL,
+    birth_date DATE NOT NULL,
+		gender VARCHAR(6) NOT NULL
+);
+~~~
+#####  a)  Correto, o comando `FLOAT` é utilizado para declarar números não inteiros. Os demais comandos da linha são constantes, sendo `NOT NULL` uma declaração de que não é possível que a aquele campo seja vazio ou tenha valores nulos.
+#
+##### b) O comando `SHOW DATABASES` mostra as múltiplas bases de dados em uma lista com os itens de cada base.O comando `SHOW TABLES` mostra as tabelas dentro de um banco de dados e em uma lista com todos os itens contidos em cada tabela do banco de dados referido.
+#
+##### c) O resultado do comando `DESCRIBE` é a demonstração de como é a tabela em uma tabela. Há a demosntração da coluna existente, o tipo daquela coluna e as restrições existentes. 
+
+# EXERCÍCIO 02
+~~~SQL
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "001", 
+  "Tony Ramos",
+  400000,
+  "1948-08-25", 
+  "male"
+);
+~~~
+##### a)
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "002", 
+  "Glória Pires",
+  1200000,
+  "1963-08-23", 
+  "female"
+);
+#
+##### b) Error Code: 1062. Duplicate entry '002' for key 'PRIMARY'. O erro é o do cógio 1062, trata-se do erro por duplicidade do valor da chave primária, que não pode ser repetida a PRIMARY KEY.
+#
+##### c) Error Code: 1136. "Column count doesn't match value count at row 1". Esse erro aconteceu porque não há a correspondência do número de valores para as colunas da tabela. Ou seja, ficou faltando declarar que birth_date e gender iriam ser preenchidos. 
+#
+##### d) Error Code: 1364. Field 'name' doesn't have a default value. Indica a ausência do valor name para a coluna que não pode ser nulo. 
+#
+##### e) Error Code: 1292. Incorrect date value: '1950' for column 'birth_date' at row 1. O valor de birth_date precisa ser uma string, não pode ser escrita como número.
+#
+# EXERCÍCIO 03
+##### a) `SELECT * FROM Actor WHERE gender = "female";`
+#
+##### b) `SELECT salary FROM Actor WHERE name = "Tony Ramos";`
+#
+##### c) O retorno é vazio, mas positivo demonstrando que existem 0 linhas inválidas.
+#
+##### d) SELECT id, name, salary FROM Actor WHERE salary <= 500000;
+#
+##### e) Error Code: 1054. Unknown column 'nome' in 'field list'. O erro existiu porque o nome da coluna está errado. 
+##### `SELECT id, name from Actor WHERE id = "002"`
+#
+# EXERCÍCIO 04
+~~~ SQL
+SELECT * FROM Actor
+WHERE (name LIKE "A%" OR name LIKE "J%") AND salary > 300000
+~~~
+#### a) Essa expressão seleciona todos os atores que iniciem com a letra A ou a letra J e também tenham um salário maior de R$300.000.
+#
+#### b) 
+```sql 
+SELECT * FROM Actor WHERE (name NOT LIKE "A%") AND salary > 350000
+```
+#### c)
+```sql 
+SELECT * FROM Actor WHERE name LIKE "%G%" OR name LIKE "%g%";
+```
+#### d) 
+```sql
+SELECT * FROM Actor WHERE (name LIKE "%A%" OR name LIKE "%a%" OR name LIKE "%g%" OR name LIKE "%G%") AND salary BETWEEN 350000 AND 900000;
+```
+
+# Exercício 5
+```sql
+CREATE TABLE Movie (
+		id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL UNIQUE,
+    synopsis TEXT NOT NULL,
+    release_Date DATE NOT NULL,
+    rating INT NOT NULL
+)
+```
+##### a) A tag `TEXT` pode ser utilizada no lugar de VARCHAR(), porém não existe a necessidade de determinar a quantidade de caracteres. 
+#
+# Exercício 6
+##### a)
+```sql
+SELECT id, title, rating from Movie WHERE id ="003";
+```
+##### b) 
+```sql
+SELECT * FROM Movie 
+	WHERE title LIKE "%Sorriso%";
+```
+##### c)
+```sql
+SELECT id, title, synopsis FROM Movie 
+	WHERE rating > 7;
+```
+# Exercício 7
+##### a)
+```sql
+SELECT * from Movie WHERE title LIKE "%vida%";
+```
+##### b) 
+```sql
+SELECT * from Movie 
+	WHERE title LIKE "%deus%" or synopsis LIKE "%vida%";
+```
+##### c)
+```sql
+SELECT * from Movie 
+	WHERE release_Date < "2020-03-22";
+```
+##### d)
+```sql
+SELECT * from Movie 
+	WHERE (release_Date < CURDATE()) AND
+    (title LIKE "%o%" OR
+      synopsis LIKE "%professor%") AND rating > 7;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
