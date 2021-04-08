@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { generateId } from "../services/idGenerator";
 import generateToken from "../services/authenticator";
 import createUserTable from "../data/userTable";
+import { hash } from "../services/hashManager";
 
 export default async function signUpUser(
   req: Request,
@@ -19,14 +20,18 @@ export default async function signUpUser(
     const userData = {
       email: req.body.email,
       password: req.body.password,
+      role: req.body.role,
     };
 
     const id = generateId();
+
+    const hashPassword = await hash(userData.password);
 
     await createUserTable(id, userData.email, userData.password);
 
     const token = generateToken({
       id,
+      role: userData.role,
     });
 
     res.status(200).send({

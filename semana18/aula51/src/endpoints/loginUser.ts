@@ -1,8 +1,7 @@
 import { Request, Response } from "express";
-import { generateId } from "../services/idGenerator";
 import generateToken from "../services/authenticator";
-import createUserTable from "../data/userTable";
 import getUserByEmail from "./getUserByEmail";
+import { compare } from "bcryptjs";
 
 export default async function loginUser(
   req: Request,
@@ -20,12 +19,15 @@ export default async function loginUser(
 
     const user = await getUserByEmail(userData.email);
 
-    if (user.password !== userData.password) {
-      throw new Error("Invalied password!");
+    const compareResult = await compare(userData.password, user.password);
+
+    if (!compareResult) {
+      throw new Error("Invalid password!");
     }
 
     const token = generateToken({
       id: user.id,
+      role: user.role,
     });
 
     res.status(200).send({

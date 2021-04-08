@@ -8,4 +8,5 @@ export type user = {
 
 export type AuthenticationData = {
   id: string;
+  role: string;
 };
