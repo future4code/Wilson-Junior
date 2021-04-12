@@ -1,17 +1,19 @@
-import * as jwt from "jsonwebtoken";
-import { AuthenticationData } from "../types";
+import { config } from "dotenv";
+import { sign, verify } from "jsonwebtoken";
+import { authenticationData } from "../types";
 
-const expiresIn = "1min";
+config();
 
-const generateToken = (input: AuthenticationData): string => {
-  const token = jwt.sign(
-    { id: input.id, role: input.role },
-    process.env.JWT_KEY as string,
-    {
-      expiresIn,
-    }
-  );
-  return token;
+const { JWT_KEY } = process.env;
+
+export const generateToken = (payload: authenticationData): string =>
+  sign(payload, JWT_KEY!, { expiresIn: "1h" });
+
+export const getTokenData = (token: string): authenticationData | null => {
+  try {
+    const { id } = verify(token, JWT_KEY!) as authenticationData;
+    return { id };
+  } catch (error) {
+    return null;
+  }
 };
-
-export default generateToken;

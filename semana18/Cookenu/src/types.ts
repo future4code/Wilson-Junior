@@ -1,12 +1,19 @@
-export type user = {
+export type authenticationData = {
   id: string;
-  email: string;
-  password: string;
-  name: string;
-  nickname: string;
+  // role: string;
 };
 
-export type AuthenticationData = {
+export type user = {
   id: string;
-  role: string;
+  name: string;
+  email: string;
+  password: string;
+};
+
+export type recipe = {
+  id: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  authorId: string;
 };
