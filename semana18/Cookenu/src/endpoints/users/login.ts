@@ -2,16 +2,13 @@ import { generateToken } from "./../../services/authenticator";
 import { Request, Response } from "express";
 import { connection } from "../../connection";
 import { userTableName } from "../../data/TableName";
-import { compare } from "../../services/hashManager";
+import { compareHash } from "../../services/hashManager";
 
-export async function login(req: Request, res: Response) {
+export async function login(req: Request, res: Response): Promise<void> {
   try {
     const { email, password } = req.body;
     const [user] = await connection(userTableName).where({ email });
-    const passwordIsCorrect: Promise<boolean> = compare(
-      password,
-      user.password
-    );
+    const passwordIsCorrect: boolean = compareHash(password, user.password);
 
     if (!passwordIsCorrect) {
       res.statusCode = 401;

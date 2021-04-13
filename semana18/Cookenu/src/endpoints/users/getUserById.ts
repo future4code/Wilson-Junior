@@ -3,15 +3,15 @@ import { connection } from "../../connection";
 import { userTableName } from "../../data/TableName";
 import { getTokenData } from "../../services/authenticator";
 
-export async function getProfile(req: Request, res: Response) {
+export default async function getUserById(req: Request, res: Response) {
   try {
     const token: string = req.headers.authorization!;
 
-    const tokenData = getTokenData(token);
+    getTokenData(token);
 
-    const [user] = await connection(userTableName).where({ id: tokenData?.id });
+    const [user] = await connection(userTableName).where({ id: req.params.id });
 
-    const { id, email, name } = user;
+    const { id, name, email } = user;
 
     res.send({ id, name, email });
   } catch (error) {

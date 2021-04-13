@@ -2,14 +2,14 @@ import { generateToken } from "./../../services/authenticator";
 import { Request, Response } from "express";
 import { connection } from "../../connection";
 import { userTableName } from "../../data/TableName";
-import { hash } from "../../services/hashManager";
+import { generateHash } from "../../services/hashManager";
 import { generateId } from "../../services/idGenerator";
 
 export async function signup(req: Request, res: Response): Promise<void> {
   try {
     const { name, email, password } = req.body;
     const id: string = generateId();
-    const cypherPassword: any = hash(password);
+    const cypherPassword: string = generateHash(password);
     const token: string = generateToken({ id });
 
     await connection(userTableName).insert({
