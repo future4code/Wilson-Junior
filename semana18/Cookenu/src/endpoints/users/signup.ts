@@ -5,11 +5,11 @@ import { userTableName } from "../../data/TableName";
 import { hash } from "../../services/hashManager";
 import { generateId } from "../../services/idGenerator";
 
-export async function signUp(req: Request, res: Response): Promise<void> {
+export async function signup(req: Request, res: Response): Promise<void> {
   try {
     const { name, email, password } = req.body;
     const id: string = generateId();
-    const cypherPassword = hash(password);
+    const cypherPassword: any = hash(password);
     const token: string = generateToken({ id });
 
     await connection(userTableName).insert({

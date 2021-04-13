@@ -1,7 +1,7 @@
 import app from "./app";
-import { signUp } from "./endpoints/users/signup";
+import { signup } from "./endpoints/users/signup";
 
-app.post("/users/signup", signUp);
+app.post("/users/signup", signup);
 app.post("/users/login");
 app.get("/users/profile");
 app.get("users/:id/profile");
