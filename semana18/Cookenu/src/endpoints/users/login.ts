@@ -12,10 +12,12 @@ export async function login(req: Request, res: Response) {
       password,
       user.password
     );
+
     if (!passwordIsCorrect) {
       res.statusCode = 401;
       throw new Error("Invalid credentials");
     }
+
     const token = generateToken({ id: user.id });
     res.send(token);
   } catch (error) {
